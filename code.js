@@ -107,3 +107,62 @@ function calcularModa(lista) {
   console.log(lista1Array);
   console.log(moda);
 }
+
+//Creamos el array de objetos 
+const arrayCreditos = [
+  {
+    asignatura: "Programacion",
+    nota: 10,
+    credito: 20,
+  },
+  {
+    asignatura: "Desarrollo web",
+    nota: 8,
+    credito: 15,
+  },
+  {
+    asignatura: "Base de datos",
+    nota: 9,
+    credito: 15,
+  }
+];
+
+//Creamos un arreglo con la multiplicasion de los creditos con la nota 
+const notasCreditos = arrayCreditos.map(
+    function (notaObjeto) 
+{
+  return notaObjeto.nota * notaObjeto.credito;
+
+});
+
+//sumamos los valores del arreglo nuevo 
+const sumOfNotesWithCredit = notasCreditos.reduce(
+
+    function (suma = 0, newVal ){
+        return suma + newVal;
+
+    }
+);
+
+const creditos = arrayCreditos.map(
+    function (notaObjeto){
+        return notaObjeto.credito;
+    }
+);
+
+const sumOfCredits = creditos.reduce(
+    function (sum = 0 , newVal){
+        return sum + newVal;
+    }
+);
+
+
+const promedioPonderadoNotaConCreditos = sumOfNotesWithCredit / sumOfCredits;
+
+
+
+console.log(notasCreditos);
+console.log(sumOfNotesWithCredit);
+console.log(creditos);
+console.log(sumOfCredits);
+console.log(promedioPonderadoNotaConCreditos);
